@@ -87,7 +87,8 @@ class State:
         return str(self.tablero)+str(self.destino)+str(self.enemigo)
     
     def __eq__(self,other):
-        return all([self.piedra == other.piedra,
+        return all([self.player == other.player,
+                    self.piedra == other.piedra,
                     self.agua == other.agua,
                     self.aspa == other.aspa,
                     self.llave == other.llave])

@@ -170,14 +170,13 @@ class Mediator(object):
             if len(self.solucion) > 0 and len(self.solucion) > self.id_sol+1: 
                 self.id_sol += 1
                 s = self.solucion[self.id_sol]
-                self.state = s
+                self.state = s.getEstado()
         elif desc == "Anterior":
             
             if len(self.solucion) > 0 and self.id_sol > 0: 
                 self.id_sol -= 1
                 s = self.solucion[self.id_sol]
-                self.state = s
-        
+                self.state = s.getEstado()
         
         htmlStr = self.ui.get_html(self.level, self.state)
         
